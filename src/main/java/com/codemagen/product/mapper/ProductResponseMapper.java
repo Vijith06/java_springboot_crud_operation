@@ -1,5 +1,7 @@
 package com.codemagen.product.mapper;
 
+import com.codemagen.product.dto.ProductDescriptionDto;
+import com.codemagen.product.dto.ProductDto;
 import com.codemagen.product.dto.response.ProductDescriptionResponse;
 import com.codemagen.product.dto.response.ProductResponse;
 import com.codemagen.product.model.ProductDescription;
@@ -43,6 +45,12 @@ public class ProductResponseMapper {
                 statusDetail
         );
     }
+
+
+
+
+
+
 
 
 

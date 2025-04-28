@@ -2,6 +2,7 @@ package com.codemagen.product.controller;
 
 
 import com.codemagen.product.contants.EndPointConstants;
+import com.codemagen.product.dto.ProductDto;
 import com.codemagen.product.dto.request.ProductRequest;
 import com.codemagen.product.dto.response.ProductResponse;
 import com.codemagen.product.service.ProductService;
@@ -37,21 +38,15 @@ public class ProductController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @GetMapping(value = EndPointConstants.GET_ALL_PRODUCTS)
+   @GetMapping(value = EndPointConstants.GET_ALL_PRODUCTS)
     public ResponseEntity<List<ProductResponse>> getAllProducts() {
         log.info("Get All Products request received");
-        List<ProductResponse> responses = service.getAllProducts();
-        log.info("Fetched {} products", responses.size());
-        return new ResponseEntity<>(responses, HttpStatus.OK);
+      List<ProductResponse> responses = service.getAllProducts();
+      log.info("Fetched {} products", responses.size());
+       return new ResponseEntity<>(responses, HttpStatus.OK);
     }
 
-    @GetMapping(value = EndPointConstants.GET_PRODUCT_BY_ID)
-    public ResponseEntity<ProductResponse> getProductById(@PathVariable UUID id) {
-        log.info("Get Product by ID request received for ID: {}", id);
-        ProductResponse response = service.getProductById(id);
-        log.info("Fetched product details for ID: {}", id);
-        return new ResponseEntity<>(response, HttpStatus.OK);
-    }
+
 
     @DeleteMapping(value = EndPointConstants.DELETE_PRODUCT_BY_ID)
     public ResponseEntity<ProductResponse> deleteProduct(@PathVariable UUID id) {
@@ -68,8 +63,13 @@ public class ProductController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-
-
+    @GetMapping(value = EndPointConstants.GET_PRODUCT_BY_ID)
+    public ResponseEntity<ProductResponse> getProductById(@PathVariable UUID id) {
+        log.info("Get Product by ID request received for ID: {}", id);
+        ProductResponse response = service.getProductById(id);
+        log.info("Fetched product details for ID: {}", id);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
 
 
 

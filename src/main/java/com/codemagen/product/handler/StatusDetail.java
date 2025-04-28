@@ -5,6 +5,7 @@ public class StatusDetail {
     private String status;
     private String message;
 
+
     // Getters and Setters
     public String getStatus() {
         return status;

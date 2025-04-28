@@ -1,6 +1,8 @@
 package com.codemagen.product.dao.Impl;
 
 import com.codemagen.product.dao.ProductDao;
+import com.codemagen.product.dto.ProductDto;
+import com.codemagen.product.mapper.ProductResponseMapper;
 import com.codemagen.product.model.ProductDetails;
 import com.codemagen.product.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,9 @@ public class ProductDaoImpl implements ProductDao {
 
     @Autowired
     private ProductRepository repository;
+
+    @Autowired
+    private ProductResponseMapper productResponseMapper;
 
     @Override
     public ProductDetails saveProduct(ProductDetails product) {
@@ -55,4 +60,8 @@ public class ProductDaoImpl implements ProductDao {
 
 
     }
+
+
+
+
 }

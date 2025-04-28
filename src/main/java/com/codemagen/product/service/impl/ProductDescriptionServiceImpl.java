@@ -5,19 +5,18 @@ import com.codemagen.product.contants.ResponseStatusConstants;
 import com.codemagen.product.dao.ProductDescriptionDao;
 import com.codemagen.product.dto.request.ProductDescriptionRequest;
 import com.codemagen.product.dto.response.ProductDescriptionResponse;
-import com.codemagen.product.dto.response.ProductResponse;
 import com.codemagen.product.handler.StatusDetail;
 import com.codemagen.product.mapper.ProductRequestMapper;
 import com.codemagen.product.mapper.ProductResponseMapper;
 import com.codemagen.product.model.ProductDescription;
-import com.codemagen.product.model.ProductDetails;
 import com.codemagen.product.service.ProductDescriptionService;
+import com.codemagen.product.service.WeatherService;
 import com.codemagen.product.validator.ProductDescriptionValidator;
+import lombok.Value;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.stream.Collectors;
+import org.springframework.web.client.RestTemplate;
 
 @Service
 public class ProductDescriptionServiceImpl implements ProductDescriptionService {

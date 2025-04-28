@@ -3,11 +3,8 @@ package com.codemagen.product.controller;
 
 import com.codemagen.product.contants.EndPointConstants;
 import com.codemagen.product.dto.request.ProductDescriptionRequest;
-import com.codemagen.product.dto.request.ProductRequest;
 import com.codemagen.product.dto.response.ProductDescriptionResponse;
-import com.codemagen.product.dto.response.ProductResponse;
 import com.codemagen.product.service.ProductDescriptionService;
-import com.codemagen.product.service.ProductService;
 import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +12,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 import static com.codemagen.product.contants.EndPointConstants.BASE_URL;
 
